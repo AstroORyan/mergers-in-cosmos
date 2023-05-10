@@ -160,12 +160,12 @@ cython_debug/
 #.idea/
 
 # Images
-.jpeg
-.png
-.jpg
-.fits
-.gif
+*.jpeg
+*.png
+*.jpg
+*.fits
+*.gif
 
 # Embargoed Data
-.csv
-.pdf
+*.csv
+*.pdf

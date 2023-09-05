@@ -1,0 +1,213 @@
+% mnras_template.tex 
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+% \usepackage{enumitem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Mergers in COSMOS]{Mergers in the COSMOS Field}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[D. O'Ryan et al.]{
+David O'Ryan$^{1}$\thanks{E-mail: d.oryan@lancaster.ac.uk}
+\\
+% List of institutions
+$^{1}$Lancaster University \\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2023}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
+\begin{abstract}
+   Abstract will go here.
+\end{abstract}
+
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+keyword1 -- keyword2 -- keyword3
+\end{keywords}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+\section{Introduction}\label{introduction}
+ Galaxy interaction and merging is of fundamental importance to our current theories of galaxy formation and evolution. Specifically, in the theory of $\Lambda$CDM cosmology, where structure is expected to form hierarchically \cite{normal cosmology papers}. These interactions lead to disturbed morphologies \citep{normal disturbed morphology papers}, intense starbursts \citep{normal starburst papers} and, potentially, the rapid quenching of those systems \citep{normal quenching papers}. These process are found to occur not just in our simulations of galaxy interaction \citep{new simulation papers} but across a wide range of observations of interacting systems as well \citep{new observation papers}. There is also evidence to suggest that interaction plays a role in the activation of active galactic nuclei (AGN) \citep{normal papers on AGN activation}. Therefore, with interaction having such an affect on the galaxies we see - over a long time period - understanding galaxy interaction is fundamental to understanding galaxy evolution.
+ 
+ To completely understand galaxy interaction, and put reliable statistical constraints on its effect on galaxies, we require large samples of interacting galaxies to compare to non-interacting control galaxies. These large samples are surprisingly difficult to come by; with the first interacting galaxy catalogue (the \citet{1966ApJS...14....1A} catalogue) containing only 318 systems. More recent studies have created their own samples, and used them to draw conclusions on the effects of interacting and merging galaxies on galaxy formation. \textbf{Give examples here of such studies}.
+ 
+ However, we elect to use the newly created interacting galaxy catalogue created by \citet{2023ApJ...948...40O} (hereafter, OR23) which found and published a sample of 21,926 interacting galaxies. This sample was created using the new ESA Datalabs\footnote{ESA Datalabs: link} platform and the new machine learning algorithm \texttt{Zoobot} \citep{2022MNRAS.509.3966W, 2023JOSS....8.5312W} classifying all sources in the Hubble Source Catalogue from the Hubble Space Telescope (HST) archives as to whether they were interacting or not. A rigorous process was then conducted to select likely interacting and merging candidates. They presented this catalogue with initial explorations of the catalogue (such as its limitations) but mainly focused on the methods used to create it.
+
+ In this work, we utilise the new OR23 catalogue and match it with the Cosmic Evolutionary Survey (COSMOS) catalogues and explore the parameters of these systems in a statistically meaningful way. We elect to use COSMOS as it has much flexibility in the parameters we can extract, having many editions of its catalogues using a variety of software to give estimates of stellar masses, star formation rates, luminosity's, and redshift information. For our aims, we use a combination of the COSMOS2015 \citep{2016ApJS..224...24L} and COSMOS2020 \citep{2022ApJS..258...11W} catalogues. The COSMOS2015 catalogue contains excellent estimates of stellar mass and photometric redshift, while the COSMOS2020 catalogue contains information to calculate the star formation rates of each galaxy from estimate luminosity's as well as X-ray flux information to define an AGN. 
+ 
+ Interestingly, there has also been little work done to investigate mergers and interacting galaxies that exist in the COSMOS field, with the most recent work \citet{2022ApJ...940....4S} investigating on 2351 systems throughout the field, focusing on the relationship of projected separation of the galaxy pairs with star formation; finding a significant enhancement in each interactor the smaller the projected separation between them was. Using OR23, we find a sample of 3096 interacting systems that are also in the COSMOS field. We will use these to investigate not only the star formation rate difference, but also the rate of occurance of AGN and the evolution of the nonparametric CAS, Gini and M$_{20}$ parameters.
+ 
+ Upon matching the OR23 catalogue to COSMOS, we also break the matched systems down into different stages in the interaction, attempting to investigate the changes in star formation rates, AGN activity and morphology as an interaction continues. We create a control sample, and aim to quantify the increase in star formation experienced by an interacting galaxy and also aim to see what this increase is at its height. We also compare the difference in occurrence in AGN between the interacting and control sample, and also speculate on the potential power of these AGN in the comparison. Finally, we measure the change in the regular morphology parameters from \citet{2004AJ....128..163L} throughout the different stages.
+
+ This paper is laid out as follows in Section \ref{data} we fully explain the OR23 and COSMOS catalogues, and describe the process of catalogue matching. Section \ref{staging} describes the methods by which we split the interacting systems in their different stages, calculate the star formation rates of each system as well as describe how we classify a galaxy as an AGN. In Section \ref{results} we full describe and discuss our results, and their implications, before we make concluding remarks in Section \ref{conclusion}. 
+
+Where necessary, we use a Flat $\Lambda$CDM cosmology with $H_0$ = $70$\,km/s/Mpc and $\Omega_M = 0.3$. Hereafter in this paper, when referring to an interacting galaxy we are referring to a galaxy which has undergone one or multiple flybys by a secondary galaxy and caused tidal disturbance. A merging galaxy is the final state of these flybys, where two or more systems have or are about to coalesce to form a highly morphologically irregular system.
+
+\section{Data \& Catalogue Matching} \label{data}
+\noindent In this work, we utilise the interacting galaxy catalogue created in \citet{2023ApJ...948...40O}. While the creation of this catalogue is fully detailed there, we will briefly describe it here. This catalogue of 21,926 interacting galaxies was created using a Convolutional Neural Network - \textit{Zoobot} - to search all final product data in the \textit{Hubble} Legacy Archive. This was done using single-band \textit{Hubble} images, specificially the \textit{F814W} filter. This choice was motivated by it having the highest number of final product FITS files associated with it. Using the \textit{Hubble} Source Catalogue to extract 92 million sources, these were classified into non-interacting and interacting galaxies. Due to existing issues with using CNNs (see \citet{papers on problems with CNN}) an extremely conservative prediction score from \textit{Zoobot} was required to define an interacting galaxy. This resulted in a very pure, but highly incomplete catalogue of interacting galaxies. Still, this is the largest catalogue of interacting galaxies directly found to date.
+
+However, in the OR23 catalogue, only the coordinates and the \textit{Hubble} Source catalogue are provided. For ancillary data, this catalogue must be matched to different data repositories. This is not a trivial task, as a large proportion of the OR23 catalogue is known to not exist in any existing astrophysical data repository. However, in this work, we opt to match the OR23 catalogue to the Cosmic Evolution Survey (COSMOS) 2020 catalogue \citep{2022ApJS..258...11W}. This contains estimates of stellar masses, photometric redshifts, star formation rates and many line fluxes estimated from LaPhare \citep{LaPhare paper} and EAZY \citep{EAZY paper}. It also contains the observed fluxes for multiple lines from UVISTA and Subaru HyperSuprime-Cam (HSC). For all further measurements of absolute magnitude, we opt to use the HSC infrared band, centered on 7740.58\AA. This is selected as it is the most relevant in detecting radiation from star forming regions over our redshift range.
+
+The two catalogues were matched by searching a 10" radius about each interacting galaxy in OR23. The galaxy closest to the OR23 coordinates in projected separation was defined as the primary galaxy. To find the secondary galaxy, another search radius of 30" was defined about the found primary galaxy coordinates in the COSMOS catalogue. A range of $\pm0.001$ about the primary redshift was taken. Note, this was based on the estimated photometric redshift from EAZY. Once this cut had been applied, the galaxy closest to the primary galaxy in projected separation was taken to be the secondary galaxy. With these criteria, a matched sample of 3,568 primary galaxies were found. For each primary, a secondary was also successfully recovered giving us a total of 7,136 interacting galaxies.
+
+However, duplication existed in this matched catalogue. This was when a primary galaxy in OR23 had been assigned to multiple COSMOS sources or vice versa. This was also true of secondaries, where the secondary galaxy source could be assigned to different primaries. Therefore, a de-duplication was conducted on the COSMOS Identification numbers. The same ID for the primary or secondary could not appear multiple times, as well as no primary or secondary galaxy IDs could match. Upon this de-duplication, we were left with a sample of 3,437 systems or 6,874 interacting galaxies.
+
+\section{Finding Secondaries \& Staging Interacting Galaxies}\label{staging}
+In this section, we describe our methodology of finding the secondaries about each galaxy and detail how we classified each interaction into separate stages. The \citet{2023ApJ...948...40O} catalogue only made predictions on interacting systems, not individual galaxies. This was due to the high number of duplication found in the source ids in the HSC. Therefore, very often, any neighbouring secondary galaxy that would have appeared in the catalogue has been merged under a single SourceID related to the primary galaxy. We use the photometric redshifts available in the COSMOS2020 catalogue to search around each primary galaxy for their related secondary. Each interacting pair is then split into four different stages of interaction. This was done by four of the authors of this work. Here, we detail how we maintain statistical robustness and quantify our biases even with multiple classifiers. We also detail the number of galaxies in each stage bin.
+
+\subsection{Secondary Identification}
+\noindent As stated previously, the \citet{2023ApJ...948...40O} catalogue only identified interacting galaxy systems, not individual interacting galaxies. Therefore, we must find the secondary in each interaction using the COSMOS2020 catalogue. We achieve this by applying three steps to each system. First, we identify all sources within a 10" radius of our identified primary interacting galaxy. We then create a slice in redshift to find galaxies which are actually nearby in 3D. This is done using a similar parameter as that defined by \citet{Baldry et al. (2006)} when calculating the environment about each galaxy. We define the slice in redshift by $\pm\Delta$zc $= \pm1000$km/s.
+
+Upon applying these two criteria, we are often only left with very few potential candidates to be the secondary interacting galaxy. At this stage, we then order all of our candidates by the measured 3D distance from our primary galaxy using the on-sky separation and their respective redshifts. The closest candidate is then used as the secondary galaxy. To test this method is robust, we conduct two final checks on our candidate interacting systems. First, for all systems we can, we look up the spectroscopic information of each. We find no serious change in the redshift between the photometric and spectroscopic redshifts. We also finally conduct a visual inspection of each candidate interacting galaxy system. We confirm that the potential secondary does exhibit morphological disturbance or is clearly involved in the interaction with the primary.
+
+In a few cases (N), we find that our secondary identification has failed. This is purely due to the secondary already merging with the primary galaxy, and therefore, not being identified as a second source or object in the COSMOS2020 catalogue. Later on, these will be classified as our stage 4 galaxies. We keep these galaxies in our sample, as they are clearly merging, merged or post-merger candidates, however do not attempt to find a secondary for them. Thus, our sample of 3,784 primary interacting galaxies is increased, with their secondaries, to N galaxies.
+
+\subsection{Classifying Stage of Interaction}
+The primary purpose of this project is to compare different stages of interaction and investigate changes in their underlying photometric parameterisations. This will give us insights into the interplay between interaction and these underlying processes. Therefore, in this section we describe how we break our interacting galaxies into different stages. 
+
+Our sample overlapping with COSMOS20202 is broken down into four different stages. We visually classify each system accounting for the pair separation and distortion. The four different stages are as follows:
+
+% \vspace{-2mm}
+
+\begin{itemize}
+    \item Stage 1: Well-separated with no morphological disturbance.
+    \item Stage 2: Close pairs showing strong signs of interaction.
+    \item Stage 3: Well separated pairs with evidence of disturbance.
+    \item Stage 4: Overlapping with morphological distortion.
+\end{itemize}
+
+% \vspace{-2mm}
+
+\noindent Each stage is designed to capture a different part of interaction, where we expect different physical processes to be dominant.
+
+In the first stage of interaction, the two galaxies remain separated with no morphological disturbance. We expect this to be because the two galaxies are approaching each other and about to begin their first pericentre pass. Therefore, we would not expect any of the usual effects of interaction to have started. This stage acts, essentially, as a control on our sample.
+
+In stage 2, we observe morphology distortion as the two galaxies have crossed their first pericentre passage.
+
+In stage 3, we expect to have captured those galaxies which have undergone their first passage of each other and be approaching their apocentre. There are then three future outcomes of this. First, the secondary galaxy is only just approaching its apocentre, it has just passed it's apocentre, or the galaxy is about to escape from the system. In any case, we observe severe morphological disturbance at this point, and would expect to begin seeing the effects of interaction on the galaxy. The severe torques exerted on the gas should lead to some initial effects of a starburst, and there could also be some ignition of nuclear activity.
+
+Stage 4 expects to capture those galaxies which are actually undergoing coalescence or be at the point where they are about to. This is, from the literature, the point we would expect all the effects of interaction to be taking place. 
+
+The categorisation was conducted by the co-authors of this paper (names). Initially, 300 samples from the COSMOS sample are classified together, to reduce biases from the group and then split between the group evenly. This leads to 4,385 classifications being made by each co-author. To further quantify the bias and error involved in using different classifiers, a further 20 galaxies were classified as a group followed by each member of the group classifying individually the same 80 galaxies. The results of this is shown in Figure \ref{fig:std-dev-clsf}. It is important to note here, that the two stages with highest disagreement between classifiers is stages 1 and 4. \textcolor{red}{Explain why this could be?}
+
+\section{Results \& Discussion}\label{results}
+ - Show breakdown of stages. \\
+ - What are their mass distributions? \\
+ - Mass Ratios \\
+ - Investigate SF with Mass \\
+ - Investigate SF with Mass Ratio/Merger Type \\
+ - Investigate SF with projected Separation \\
+ - Control for Environment \\
+ - Where do the interacting galaxies lie? \\
+ - What does this all mean?
+ 
+\section{Conclusions}\label{conclusion}
+ - Restate the Results \\
+ - What's the next steps of this project?
+    - Hint at what I would do in a Fellowship.
+ 
+\section*{Acknowledgements}
+The Acknowledgements section is not numbered. Here you can thank helpful
+colleagues, acknowledge funding agencies, telescopes and facilities used etc.
+Try to keep it short.
+
+This work utilised data from the Cosmic Evolution Survey (COSMOS) which has a digital object identifier of 10.26131/IRSA178.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+\bibliographystyle{mnras}
+\bibliography{references} % if your bibtex file is called example.bib
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Needed?}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Don't change these lines
+\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
+% End of mnras_template.tex

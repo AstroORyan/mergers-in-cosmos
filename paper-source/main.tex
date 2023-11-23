@@ -44,7 +44,7 @@
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage{hyperref}
-% \usepackage{enumitem}
+\usepackage{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -175,7 +175,7 @@ The parameters required to calculate the AGN fraction are not found in the COSMO
 The primary goal of this work is to find if a relation exists between a host of galactic parameters, underlying physical processes and the stage of the interaction. We, therefore, need to define different stages for them. We have hinted at this in the previous section with Figure \ref{fig:secondaries_found}. We break our sample down into four stages:
 
 \begin{itemize}
-    \item Stage 1: Systems which are well-separated with no morphological disturbance.
+    \item Stage 1: Systems which are well-separated with little to no morphological disturbance.
     \item Stage 2: Close pairs showing either morphological distortion or physical connection by tidal features.
     \item Stage 3: Well separated pairs with morphological disturbance or isolated galaxies with clear tidal features.
     \item Stage 4: Highly disturbed systems with two or more cores within.
@@ -212,7 +212,9 @@ The result of this process, and the cuts defined previously, is a catalogue of $
 Upon applying the mass cut to our sample, we find that we are matching 2,800 sources to the \citet{2017ApJ...837...16D} catalogue. Upon matching based upon the COSMOS2015 ID, we find that 628 sources in our sample do not exist in the environment catalogue. This reduces our sample to 2,172 galaxies with confirmed and reliable environment density measurements.
 
 \subsection{Classifying AGN}
-\noindent We will also investigate the affect of interaction stage upon the AGN activity within the galaxies involved. Unfortunately, the outputs of EAzY and LePhare do not provide us with photometric estimates of the line fluxes needed to define an AGN on a Baldwin, Philips and Terlevich (BPT) diagram \citep{}. Therefore, we cannot directly identify if a galaxy is only star forming, has nuclear activity or is a composite. So, we turn to cross-matching our sample to three different catalogues which contain the required information. We use the Chandra COSMOS Legacy Survey Multiwavelength Catalogue \citep{2016ApJ...817...34M} and the COSMOS VLA 3GHz survey \citep{2017A&A...602A...6S, 2017A&A...602A...3D}. In these catalogues an AGN, star forming or composite classification is given within the catalogue.
+\noindent We will also investigate the affect of interaction stage upon the AGN activity within the galaxies involved. Unfortunately, the outputs of EAzY and LePhare do not provide us with photometric estimates of the line fluxes needed to define an AGN on a Baldwin, Philips and Terlevich (BPT) diagram \citep{}. Therefore, we cannot directly identify if a galaxy is only star forming, has nuclear activity or is a composite. So, we turn to cross-matching our sample to three different catalogues which contain the required information. We use the Chandra COSMOS Legacy Survey Multiwavelength Catalogue \citep{2016ApJ...817...34M} and the COSMOS VLA 3GHz survey \citep{2017A&A...602A...6S, 2017A&A...602A...3D}. Each source has an AGN, star forming or composite classification is within the catalogue.
+
+% Need a small paragraph here about these two catalogues and their differences.
 
 Again, our cross match process is very much the same as previously described. We use the previously identified COSMOS2020 source coordinates and conduct a radial search of 10". If more than one source is within this radius, we match on the closest source. The two catalogues derived from the COSMOS survey do not contain IDs which overlap with the COSMOS2020 catalogue, therefore we must do it based on coordinates. We conduct our matching in serial, starting from the \citet{2017A&A...602A...6S} catalogue and then to the Chandra survey. At every step, if we find a match in the relevant catalogue, we remove it from subsequent searches in other catalogues and take the first classification as the correct one.
 
@@ -220,22 +222,112 @@ Applying our matching criteria, we find 1,059 classifications in the VLA 3GHz su
 
 While the ratio of AGN to star forming galaxies in our sample seems large compared to other works, it is important to note that this is a result of limited matching between the catalogues. Of the 4,182 galaxies in our sample, only 1,214 appeared at all in either the VLA or Chandra catalogues. Any galaxy which did not appear in these catalogues, we discard as unclassified. Therefore, we require these catalogues to specifically show us if a galaxy is star forming or not before we classify it as such. This is why our number of star forming galaxies is lower than expected. We discuss this limitation in section \ref{sec:limitations} and the effect it may have on our results of AGN fraction evolution with stage.
 
-\section{Results \& Discussion}\label{results}
-\noindent With our samples selected, and numbers throughout known, we can begin to investigate teh change in multiple parameters with stage of the interaction. As stated previously, the four stages of interaction are designed to capture the main different parts of galaxy interaction. First, we show the results of breaking down our sample into stages with relation to the star formation and mass of our sample. We investigate the differences between these distributions and interpret what underlying physical processes could be occurring to show these differences. We show that the results we have found could not be due to other effects, like different environments affecting our selection etc. We then this up by discussing the changing AGN sample that we see, discuss selection effects and discuss the potential underlying processes responsible for our results.
+\section{STAR FORMATION EVOLUTION WITH INTERACTION STAGE}\label{results}
+\subsection{Controlling for Interaction Stage}
+\noindent With our samples selected we investigate the change in multiple parameters with stage of the interaction. As stated previously, the four stages of interaction are designed to capture the main different parts of galaxy interaction. First, we show the results of breaking down our sample into stages with relation to the star formation and mass of our sample. We utilise the estimates of these parameters that exist in the COSMOS2020 catalogue itself. We have the option to use either the measured estimates from LePhare or EAzY. We opt to use the stellar mass measured from LePhare and the star formation rate measured with EAzY for our final results. We choose this as using any other combination reveals the degeneracys of the SED template fitting conducted in either of the underlying softwares. Figure \ref{fig:difference-measures} shows how the two measures differ from each other. As shown, EAzY measures larger stellar masses compared to LePhare while the scatter in SFR is very large.
 
-Finally, to put this in more context with the literature, we break our sample down further into correctly identified pairs and mergers. We use this subsample to explore the relationship between the galactic parameters previously discussed, and the mass ratio and projected separations of the systems. We show that this agrees with previous works, and how this lends legitimacy to our results with different stages of interaction.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/mass-sfr-scatter.pdf}
+    \caption{Comparison of the measures of stellar mass and SFR using either LePhare or EAzY photometric codes to calculate them. \textit{Left}: The scatter in the stellar masses between softwares. As shown, EAzY often seems to find larger stellar masses when compared to LePhare. \textit{Right}: Scatter in SFRs when measured with LePhare or EAzY. There is a large difference between the measures of LePhare and EAzY here, and therefore we opt to only use EAzY measures of the SFR through this work.}
+    \label{fig:difference-measures}
+\end{figure}
 
-\subsection{Star Formation Rate with Stage}
+As the measure of the masses between the softwares is similar, we can interchange which mass we use in these measurements. However, with the very large scatter of the SFRs between the softwares, we opt to only use the EAzY measurement. % Where do these differences come from? What potential impact could this have on our results?
 
-\subsection{Controlling for Galactic Environment}
+With the measures of stellar mass and SFR selected, we break down our sample into their different stages. Figure \ref{fig:sfr-mass} shows the breakdown of these parameters with stage. On a population scale, there is clear evolution in the star formation rate from stage 1 through to stage 4. In stage 1, where the galaxies are distinct from one another with no clear morphological disturbance, we clearly see two populations of galaxies. These are the blue, star-forming and red sequences. The contours of number density in Figure \ref{fig:sfr-mass} bring out this population. In stage 2, when the galaxies are at pericentre, this red sequence remains but is highly diminished while the star forming sequence remains constant. Stage 3 shows a similar effect, where the red sequence reduces again before finally in stage 4 the red sequence completely disappears.
 
-\subsection{Nuclear Activity with Stage}
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.45\textwidth]{figures/sfr-mass-stages.pdf}
+    \caption{The LePhare stellar mass against the EAzY SFR across the different stages of the interaction. The blue contours are 8 levels of density of the underlying populations in each frame. \textit{Top left}: The stellar mass and star formation rate of Stage 1 of our sample. Here, the interacting galxies are simply close pairs with little to no morphological disturbance. There are clearly two populations here: a main, star forming sequence forming the main population and a smaller red sequence. \textit{Top right}: Stage 2 of the interaction, where the two interactors are close to pericentre. The star forming sequence remains, but the red sequence is reduced significantly. \textit{Bottom left}: Stage 3 of the interaction, where the interactors are close to apocentre or escaped. Here, we see the almost complete disappearance of the red sequence. \textit{Bottom Right}: Stage 4 of the interaction, where the two systems are close to coalescence or have merged. The red sequence of galaxies has completely disappeared.}
+    \label{fig:sfr-mass}
+\end{figure}
 
+However, this result could also be due to many other factors rather due to interaction stage. For instance, if the mass distribution of our sources evolves as well, it could just be that we are selecting higher mass systems in stage 4 when compared to stage 1. This would have the result of systems in stage 4 having, on average, higher SFRs than those in stage 1 and appearing like we had evolution in the star forming population with stage. Another effect that could cause this relation to appear would be our selection was highly dependent on galactic environment. It is well known that environment and star formation are closely linked, and that classifying interacting galaxies by morphology classifiers can weight up the cluster environment over galaxies in the field. In Section \ref{sec:env-cont}, we control for the environment in our sample and show that this is not an issue. Here, we investigate the question of the evolution of the mass distribution that could give us this result.
+
+We can quantify the similarity of the mass distributions, and then the SFR distributions, using well known statistical tests. We opt to use two different tests: the KS-test and the Shapiro-Wilkes test. The KS-test is excellent at comparing different weighted distributions to each other, while the Shapiro-Wilkes test compares these distributions to other well known functions (in our case, the normal function). Thus, by weighting the mass distributions and using a KS-test, we will be able to quantify how alike the mass distributions are and then compare this to the weighted distribution of the SFRs. The weighting scheme we utilise normalises the distributions such that each bin in the distribution had the same number of sources within it. Therefore, any bins with few than the average number of sources will be weighted up while those bins with more will be weighted down. These weights applied to the mass distribution are then applied to the SFR distribution so the counts in each bin are, essentially, the same.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.45\textwidth]{figures/stellar-mass-dist.pdf}
+    \caption{The stellar mass distribution across the four stages. Each bin is weighted to have equivalent counts within them.}
+    \label{fig:weighted-mass}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/sfr-dist.pdf}
+    \caption{SFR distribution weighted by mass across each stage.}
+    \label{fig:weighted-sfr}
+\end{figure}
+
+Figure \ref{fig:weighted-mass} shows the weighted mass distributions through the four different stages. These appear highly similar, and we conduct Kolmogorov-Smirnov \citep[KS-test;][]{an1933sulla} and Anderson-Darling \citep[AD-test;][]{AD_paper} tests to compare each distribution. In each test, we calculate the value of the KS test and a p-value which is the probability that each distribution is drawn from the same parent distribution. For each mass distribution, we find that p-value of the KS test is approximately one. Thus, it is not unreasonable to assume that the galaxies between each of our samples are drawn from the same parent sample and are very similar. Figure \ref{fig:weighted-sfr} shows the SFR distributions while being weighted and controlled for mass. When comparing stages 1 and 2, 1 and 3, 1 and 4, 2 and 4 and 3 and 4, the p-values are $\ll$0.05. Thus, we can reject the null hypothesis for these distributions and assume they are from different parent samples and are not identical. However, for comparing stages 2 and 3, the p-value of the KS test is $\approx$0.90. Thus, while these distributions are likely to be not identical, they are very similar in the parent sample they have been drawn from. \textbf{Thus, for the same mass distribution through each stage of interaction, the star formation distribution radically changes from stage 1 to stage 2 and from stage 3 to stage 4, while remaining reasonably similar from stage 2 to stage 3.}
+
+Putting this result into the context of the dynamical timescale of an interaction, it shows there are three separate stages star formation evolution in these systems. The first is the change from isolated SFRs to interacting SFRs. Here, the SFR between galaxies which are close pairs and those that are at pericentre are radically different. This difference persists through to stage 3 - where the galaxies are at pericentre in the interaction. The SFR distribution remains approximately the same between these two, meaning the forces that drive and affect star formation remain equivalent between these two stages. Finally, the SFR radically changes again when we approach the merging or post-merger stage of the interaction. We can also say that this change is likely an enhancement in the SFR of the galaxies through the interaction due this change being driven by the disappearance of the red sequence through each stage.
+
+We also control for redshift in our examination of this result. While the red sequence is significantly reduced across stage, it is important that we put this into the context of the star forming main sequence of galaxies. We expect that, due to an interaction, the population of starbursting and quiescent galaxies will change with stage. Therefore, we define a star forming main sequence through across redshift. This allows us to classify each source based on its SFR independently of redshift. To define the star forming main sequence (SFMS), we follow the example of \citet{2019MNRAS.484.4360A}. There, they define the star forming main sequence as a function of galactic stellar mass and redshift as
+
+\begin{equation}
+    \log \text{SFR}_{\text{MS}}(z)[M_\odot yr^{-1}] = -7.6 + 0.76\log\frac{M_*}{M_\odot} + 2.95\log(1+z).
+\end{equation}
+
+\noindent This finds the expected, main sequence, SFR of a galaxy at a given stellar mass, $M_*$, and redshift, z.
+
+The ratio of the measured galaxy SFR and the expected main sequence SFR is then taken. We then use this fraction to classify each galaxy into distinct bins. These are:
+
+\begin{enumerate}[(i)]
+    \item Starburst galaxies. Here, the galaxy SFR is highly elevated compared to the SFMS. We follow \citet{2019MNRAS.484.4360A} and define a cutoff of $\log$SFR/SFR$_{\text{MS}} >$ 0.4.
+    \item Main sequence galaxy. The galaxy is within 0.4 dex of the SFMS and approximately has the expected SFR. Defined as $-0.4 < \log$SFR/SFR$_{\text{MS}} < 0.4$.
+    \item Sub-main sequence galaxy. A galaxy whose SFR is below the majority of the SFMS, but likely not quiescent. Defined as $-1.3 < \log$SFR/SFR $_{\text{MS}} < $ -0.4.
+    \item Quiescent (High) galaxy. A galaxy with an SFR in the top $\approx$50\% of the quiscent galaxy population. Defined as $-2.3 < \log$SFR/SFR $_{\text{MS}} <$ -1.3.
+    \item Quiescent (Low) galaxy. A galaxy with low SFR and very likely completely quenched. Defined as $\log$SFR/SFR $_{\text{MS}} <$ -2.3.
+\end{enumerate}
+
+\noindent We split our sample into its different stages and apply these criteria. Figure \ref{fig:sfr-clsf} shows the ratio between the expected SFMS SFR and the found SFR in COSMOS. This clearly shows a large increase in galaxies classified as starburst from stages 1 to 4 and a large reduction in the number of quenched systems. Figure \ref{fig:sfr-clsf-bar} shows the change in fraction of the different galaxy classifications through stage. These Figures reflect the results found in Figure \ref{fig:sfr-mass}. Initially, in stage 1, we find that the majority of our galaxies lie on the SFMS or just below it. There also exists a small population of galaxies which are classified as a starburst with a population of quiescent galaxies that is roughly double the fraction. As we move through the interaction stage, we see that the quiescent galaxy fraction gradually decreases to the point of almost non-existence in stage 4 galaxies. The complete inverse is true in our starburst fraction. We find that this almost quadruples in the fraction of our sample over the course of the different stages of interaction. The fraction of galaxies on the SFMS remains dominant throughout, however, we do find the fraction of sub-MS galaxies significantly reduced.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/sfr-clsf-dist.pdf}
+    \caption{Stellar mass against the ratio of measured SFR to the expected SFR if the galaxy was on the SFMS. Black points are the individual sources, while the blue contours are as in Figure \ref{fig:sfr-mass}. The red dotted lines show the cutoffs for different galaxy classifications based on their SFR, with each cut off being defined by the text in blue. We find that through interaction stage, the quiescent galaxy population significantly reduces while the starburst population rapidly increases. As these cutoffs are also dependent on redshift, we find that this evolution in SFR with interaction stage is independent of redshift.}
+    \label{fig:sfr-clsf}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/sfr-clsf-bar.pdf}
+    \caption{The change in fraction of different galaxy classifications from the fraction of SFR to the expected SFR on the SFMS. While galaxies on the SFMS remain dominant through each sample across interaction stage, there is significant change in the starburst and quiescent populations. The starburst galaxy population moves from being roughly half the size of the quiescent population in stage 1 to completely dominating it in stage 4. This is occurring while the quiescent population is significantly reduced to almost non-existence in stage 4.}
+    \label{fig:sfr-clsf-bar}
+\end{figure}
+
+% So, what does this all mean?
+Thus, we find that throughout the different stages of interaction the star formation within the systems is being driven upwards. This is not an unexpected result. It has long been known that the SFRs of merging and post-merging galaxies is increased with respect to control samples of galaxies within the field \citep{papers saying this}. However, what we have found here is that this process of increasing SFR and galaxies being driven to starburst begins from the pericentre of the first interaction. Simulations have long showed that there is a peak in SFR initially in an interaction, followed by a slow reduction to a final enhanced level in the post-merger stage \citep{papers saying this}. However, due to the initial starburst, it is often shown that the gas within the galaxy is either quickly used up and the galaxy quenches or it is heated to the point that star formation becomes very inefficient. Thus, what we would expect to see here is that stages 2 and 4 would have the highest fractions of galaxies undergoing a starburst and the smallest quiescent fractions.
+
+Our work here is found to be correct by both simulations and previous works on when the starburst occurs in an interacting galaxy. We observe significant change in the starburst and quiescent fractions from stage 1 to 2 and stage 3 to 4. Thus, the initial part of the interaction appears to have a significant impact on the SFR (and, therefore, the gas content) of the galaxies involved. This enhanced star formation then persists through the interaction, even when the other galaxy approaches the apocentre of the interaction. This is seen by the relatively little change in the SFR classifications from stage 2 to 3. While the fraction of MS galaxies does increase slightly, the fraction of starburst galaxies remains essentially constant. There is also no major change in the quiescent fraction either. However, it is interesting to note that the sub-MS fraction does decrease. Thus, the transition to stage 2 to stage 3 of an interaction may bring with it slight enhancement in the SFR, but not on the scale of the other transitions in interaction stage. We then see clear evidence for a second starburst is being driven by the merging of the systems that goes beyond even the enhanced from the initial pericentre passage. 
+
+So, what does the SFR evolution look like from our results? As the interactors approach each other, they are representative of a control sample where there is a population of quiescent, MS and starburst galaxies. However, upon transitioning from stage 1 to 2, the disturbance due to interaction provokes increased fragmentation of a galaxies gas and leads to an increase in star formation. This is true even of the galaxies which have very little gas remaining, as the quiescent fraction reduces significantly in our sample. This enhancement persists from stage 2 to stage 3, where we see no major change in the classification fractions. Then, upon merging and transitioning to stage 4, we find that even the most gas-empty galaxies begin forming stars quickly. 
+
+Now, it is important to note the parameter space that we are searching in these examples. We are probing major interactions between galaxies, where the resultant tidal features that form would be classifiable in an image. It is well know that the mass ratio of an interaction takes an important role in the enhancement of star formation \citep{papers about major interaction}, and we are probing the most extreme examples. Hence, even those mergers which are considered dry - with very little gas - would be capable of driving major rejuvenation in the star formation of these systems. To conclude, \textbf{we find clear, statistically robust evolution of a galaxys' SFR with interaction stage. The SFR changes dramatically from stage 1 to 2 and stage 3 to 4 - at the pericentre and coalescence of the interaction. Existing simulations of galaxy interactions support this interpretation of when star formation changes.}
+
+\subsection{Controlling for Galactic Environment} \label{sec:env-cont}
+\noindent While we have found clear evidence of evolution in the SFR of interacting galaxies with stage, it is important we remove a potential source of contamination. It is well known that the environment has a direct impact on the observed SFR of galaxies. A galaxy in a cluster environment has, on average, a higher SFR than those in the field \citep{Papers on environment with SFR}. Thus, if any of our stage classifications are biased towards one environment or another, it could have severe consequences for our results. Therefore, we utilise the existing COSMOS envrionment catalogue described in \citet{2017ApJ...837...16D} to ensure there are no environmental biases in our staging. 
+
+Upon applying the matching described in Section \ref{data:environ}, we break our samples into different environment measures with stage. Figure \ref{fig:dens-stage} shows the distribution of our matched samples with their density values. It is important to note that \citet{2017ApJ...837...16D} has a higher mass cutoff than we have implemented in our underlying sample. Therefore, this is showing the density of all systems $\log$M$_*$/ M$_\odot \geq$ 9.6. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/density-stage.pdf}
+    \caption{The density about each of our sources matched with the \citet{2017ApJ...837...16D} catalogue. As shown, there is no existing bias in the distribution of galactic environments throughout our stages. This is confirmed by performing KS- and AD-tests. Therefore, we can conclude that the shown evolution in SFR with interaction stage is not due to environmental effects.}
+    \label{fig:dens-stage}
+\end{figure}
+
+\section{Nuclear Activity with Interaction Stage}
+\subsection{Controlling for Stage}
+
+\section{Characteristics of Matched Pairs}
 \subsection{Star Formation and Mass Ratio}
 
 \subsection{Star Formation and Projected Separation}
-
-\subsection{Comparison to Other Works}
 
 \section{Limitations of Approach}\label{sec:limitations}
 \subsection{Redshift Effects on Visual Classification}
@@ -253,6 +345,8 @@ As shown, the distribution of masses across redshift that we find in our sample 
 \subsection{Selection Effects in AGN Sample}
 
 \subsection{Limitations of Visual Classification}
+
+\subsection{Selection Effects of SFR Sample}
  
 \section{Conclusions}\label{conclusion}
  - Restate the Results \\

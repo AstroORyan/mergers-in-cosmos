@@ -211,7 +211,7 @@ The result of this process, and the cuts defined previously, is a catalogue of $
 
 Upon applying the mass cut to our sample, we find that we are matching 2,800 sources to the \citet{2017ApJ...837...16D} catalogue. Upon matching based upon the COSMOS2015 ID, we find that 628 sources in our sample do not exist in the environment catalogue. This reduces our sample to 2,172 galaxies with confirmed and reliable environment density measurements.
 
-\subsection{Classifying AGN}
+\subsection{Classifying AGN}\label{sec:agn-clsf}
 \noindent We will also investigate the affect of interaction stage upon the AGN activity within the galaxies involved. Unfortunately, the outputs of EAzY and LePhare do not provide us with photometric estimates of the line fluxes needed to define an AGN on a Baldwin, Philips and Terlevich (BPT) diagram \citep{}. Therefore, we cannot directly identify if a galaxy is only star forming, has nuclear activity or is a composite. So, we turn to cross-matching our sample to three different catalogues which contain the required information. We use the Chandra COSMOS Legacy Survey Multiwavelength Catalogue \citep{2016ApJ...817...34M} and the COSMOS VLA 3GHz survey \citep{2017A&A...602A...6S, 2017A&A...602A...3D}. Each source has an AGN, star forming or composite classification is within the catalogue.
 
 % Need a small paragraph here about these two catalogues and their differences.
@@ -251,14 +251,14 @@ We can quantify the similarity of the mass distributions, and then the SFR distr
 \begin{figure}
     \centering
     \includegraphics[width = 0.45\textwidth]{figures/stellar-mass-dist.pdf}
-    \caption{The stellar mass distribution across the four stages. Each bin is weighted to have equivalent counts within them.}
+    \caption{The stellar mass distribution across the four stages. Each bin is weighted based on the counts in the smallest sub-sample in stage. This is stage 4 of interaction.}
     \label{fig:weighted-mass}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{figures/sfr-dist.pdf}
-    \caption{SFR distribution weighted by mass across each stage.}
+    \caption{SFR distribution weighted by mass across each stage. This weighting is based on our sample of stage 4.}
     \label{fig:weighted-sfr}
 \end{figure}
 
@@ -310,7 +310,7 @@ So, what does the SFR evolution look like from our results? As the interactors a
 Now, it is important to note the parameter space that we are searching in these examples. We are probing major interactions between galaxies, where the resultant tidal features that form would be classifiable in an image. It is well know that the mass ratio of an interaction takes an important role in the enhancement of star formation \citep{papers about major interaction}, and we are probing the most extreme examples. Hence, even those mergers which are considered dry - with very little gas - would be capable of driving major rejuvenation in the star formation of these systems. To conclude, \textbf{we find clear, statistically robust evolution of a galaxys' SFR with interaction stage. The SFR changes dramatically from stage 1 to 2 and stage 3 to 4 - at the pericentre and coalescence of the interaction. Existing simulations of galaxy interactions support this interpretation of when star formation changes.}
 
 \subsection{Controlling for Galactic Environment} \label{sec:env-cont}
-\noindent While we have found clear evidence of evolution in the SFR of interacting galaxies with stage, it is important we remove a potential source of contamination. It is well known that the environment has a direct impact on the observed SFR of galaxies. A galaxy in a cluster environment has, on average, a higher SFR than those in the field \citep{Papers on environment with SFR}. Thus, if any of our stage classifications are biased towards one environment or another, it could have severe consequences for our results. Therefore, we utilise the existing COSMOS envrionment catalogue described in \citet{2017ApJ...837...16D} to ensure there are no environmental biases in our staging. 
+\noindent While we have found clear evidence of evolution in the SFR of interacting galaxies with stage, it is important we remove a potential source of contamination. It is well known that the environment has a direct impact on the observed SFR of galaxies. A galaxy in a cluster environment has, on average, a higher SFR than those in the field \citep{Papers on environment with SFR}. Thus, if any of our stage classifications are biased towards one environment or another, it could have severe consequences for our results. Therefore, we utilise the existing COSMOS environment catalogue described in \citet{2017ApJ...837...16D} to ensure there are no environmental biases in our staging. 
 
 Upon applying the matching described in Section \ref{data:environ}, we break our samples into different environment measures with stage. Figure \ref{fig:dens-stage} shows the distribution of our matched samples with their density values. It is important to note that \citet{2017ApJ...837...16D} has a higher mass cutoff than we have implemented in our underlying sample. Therefore, this is showing the density of all systems $\log$M$_*$/ M$_\odot \geq$ 9.6. 
 
@@ -321,8 +321,27 @@ Upon applying the matching described in Section \ref{data:environ}, we break our
     \label{fig:dens-stage}
 \end{figure}
 
+We conduct weighted KS and AD tests on the environment distributions, and confirm they are likely drawn from the same parent sample. The resultant p-values are $\approx$1 when comparing between the distributions. Thus, there are no biases in our stage selection with environment, and it fair to assume that the evolution in the SFR with stage is due to interaction, not environment.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/sfr-mass-density.pdf}
+    \caption{The distribution of environment classifications through our sample. This is only for sources with a $\log$M$_*$ / M$_\odot \geq$ 9.6. However, from this subsample, we see that there is no trend with environment and that the distribution is random throughout each stage. Therefore, the effects of increasing SFR with interaction stage is not due to environmental effects.}
+    \label{fig:dens-sfr-mass}
+\end{figure}
+
+Figure \ref{fig:dens-sfr-mass} shows the environment classification in our reduced stellar mass-SFR distribution. This shows that there is no ordered structure, or bias, in our sample with environment and further reinforces that the galactic environment is not responsible for our proposed SFR evolution with stage. The majority of our sample lie either within filaments or in the field. The environment which would have the most effect upon the SFRs of our sample is a cluster environment. However, the fraction of our sample within a cluster is never greater than 10\%. It is important to note, however, that the galaxies most likely to lie in a cluster in our sample would be lower mass galaxies. However, these systems are not found in the red sequence where we see the most change in SFR due to interaction. Therefore, the lack of information here does not have a large impact on this measurement. 
+
 \section{Nuclear Activity with Interaction Stage}
 \subsection{Controlling for Stage}
+\noindent We now cross match our sample with the two AGN catalogues and methods described in Section \ref{sec:agn-clsf}. This gives a sample of 1,284 AGN and star forming galaxies (SFGs) to cross match with the stage. Figure \ref{fig:agn-stage} shows distribution of stellar mass to SFR with stage, with the confirmed AGN and SFG marked.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/agn-stage-dist.pdf}
+    \caption{The distribution of AGN through stage with SFR and stellar mass.}
+    \label{fig:agn-stage}
+\end{figure}
 
 \section{Characteristics of Matched Pairs}
 \subsection{Star Formation and Mass Ratio}

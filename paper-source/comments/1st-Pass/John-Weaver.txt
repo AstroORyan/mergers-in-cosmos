@@ -1,0 +1,16 @@
+Hi Brooke and David,
+
+Thank you for circulating the draft of this exciting work. I’m constantly amazed at what folks can do with the COSMOS2020 catalog!
+
+I was really curious about some of the discussion regarding the catalog and though I’d send some comments, specifically:
+Which catalog was used? Classic or the Farmer? The area covered and the number of sources differ. I suppose for low-z the best best is the Classic catalog as the Farmer is liable to have bad model fits to the resolved, low-z mergers. I think this is worth explicitly mentioning.
+You mention FAST was used. How so? I know eazy used to work with FAST, but now the physical parameters reported in the catalog from eazy are computed within eazy with no use of FAST.
+You intermix the SFR and Mass from LePhare and EAZY. Do both codes come up with the same redshift solution? Otherwise the physical parameters will be disjoint due to the redshift difference.
+I find it extreme to use 10” when matching objects. The number of sources within COSMOS2020 within 10” is rather large, and usually we try to match within an arcsecond at most. Maybe you’re pre-selecting low-z objects and then matching? Also, what is de-duplicating? Just curious.
+
+I don’t have expertise in merger identification so I’ll leave those comments to the experts, and don’t worry about adding me as a co-author as these few comments don’t warrant it.
+
+Apologies for the late commentary! Good luck and please let me know if you have any questions.
+
+Cheers,
+John

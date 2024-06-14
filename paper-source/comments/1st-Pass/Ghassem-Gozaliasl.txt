@@ -1,0 +1,25 @@
+Hi David and Brooke,
+
+ 
+
+Thank you for the excellent work. Unfortunately, I'm currently tied up with an NSF and RCF funding proposal and haven't had much time to thoroughly review the paper. I plan to read it as soon as possible, but in the meantime, please consider my comments for revision later:
+
+ 
+
+A few quick comments on the abstract:
+
+ 
+
+1. When you mention "at what point in interaction," could you clarify if you mean a specific timescale or phase?
+
+2. Please add the redshift range of galaxies for clarity.
+
+3. When stating "We select a sample of 4181...," could you explain the selection process? Perhaps mention if galaxies were selected and classified based on visual inspection.
+
+4. You abbreviate "AGN activity" in line 7 but then use "active galactic nuclei" at the beginning of line 11.
+
+ 
+
+Cheers,
+
+Ghassem

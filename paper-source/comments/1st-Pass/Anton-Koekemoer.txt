@@ -1,0 +1,81 @@
+This email originated outside the University. Check before clicking links or attachments.
+
+hi Brooke,
+
+thanks very much for circulating this very nice paper by David, and
+thanks also for inviting us to join from the COSMOS side, greatly
+appreciated. I've now had a chance to read through it and I think this
+paper is great, I'm also very happy that all of my COSMOS HST ACS F814W
+mosaics that I produced were so helpful for this paper, and I'd be very
+happy to join among the other coauthors, I provide here my affil/ orcid
+info:
+
+\author[0000-0002-6610-2048]{Anton M. Koekemoer}
+\affiliation{Space Telescope Science Institute, 3700 San Martin Dr.,
+Baltimore, MD 21218, USA}
+
+I'm also sending here a few comments which I hope are useful, as follows.
+
+At the end of section 2.1, it's good to motivate the redshift cut by the
+decreasing sensitivity to low surface brightness features, but this is
+treated a bit like a sudden change at that redshift, while instead it
+would be more of a gradual decrease across the entire redshift range. So
+I was wondering whether it might be worth treating this more as a
+redshift-dependent bias across the redshift range of the sample (in
+addition to motivating the z=1.2 cut). Eg, later on in section 3.4 and
+fig 7 you already have a nice discussion about the impact of this
+surface brightness effect, but it might be worth adding something a bit
+more quantitative, for example presenting the mathematical function for
+the redshift-dependent surface brightness dimming, and discussing the
+amount (eg in magnitudes) by which the sensitivity decreases over the
+redshift range of the sample. This could be helpful in the discussion of
+micro-interactions and faint tidal features, especially at different
+redshifts.
+
+In section 2.3-2.4, I liked the discussion about defining the mass- and
+redshift-matched control galaxy sample, as well as the approach of
+incorporating a mass cut to help mitigate redshift-dependent
+mass/luminosity effects. One question I had about that was the
+robustness of the masses being used -- sources at higher-z will
+generally have fewer bands that can be used by the SED fitting codes, so
+mass measurements may be more uncertain, since there may be fewer
+constraints on age/reddening degeneracies. Ie, from redshift 0 to 1.2,
+the 4000A break moves all the way up to almost 9000A, so the quality of
+SED fits would gradually deterioriate over this interval, potentially
+impacting the reliability of the masses in a systematic way towards
+higher z. There might possibly be tests that could be done to quantify
+this, but if they're too extensive then the best might just be to
+discuss this as a possible concern, and also perhaps add a statement
+about how much or how little impact you think it might have.
+
+Then in section 3.2, also related to redshift, it's nice to see the
+demonstration of measured projected separations in physical units as a
+function of redshift, and shown in fig 6. Here I was wondering about the
+10kpc value, as follows -- since this value works successfully all the
+way to z=1.2, while at low-z there seems to be an apparent loss of
+secondary galaxies because of the cutouts being too small, is there some
+way to homogenize the sample further at this point? Eg, exclude galaxies
+with separations less than 10kpc since they might not be detectable as
+pairs all the way to z=1.2, and perhaps also exclude galaxies with
+separations large enough to be missed as pairs at low z. This seemed
+like a redshift-dependent bias that would be worth discussing further,
+eg you could do the experiment of excluding these galaxies, and check
+whether or not your conclusions are significantly impacted, and report
+the results in this section.
+
+Finally, in section 2.2, paragraph 1, after "F814W filter" could you add
+please "(Koekemoer et al. 2007)" where the bibtex code for the citation
+is here:
+
+https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fui.adsabs.harvard.edu%2Fabs%2F2007ApJS..172..196K%2Fexportcitation&data=05%7C02%7Coryan%40live.lancs.ac.uk%7C774953c57cbe449fab2808dc2f48fdf5%7C9c9bcd11977a4e9ca9a0bc734090164a%7C0%7C0%7C638437237768494724%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=2uc31XY6CTuPEmoT%2FZxxAfyDFdTg%2FTkf2eP4kAdibLw%3D&reserved=0
+
+Also at the end of the caption to Figure 1, after "F814W filter" would
+you be able to add the same citation there as well please?
+
+
+Again, I think this paper looks excellent overall, thanks for all the
+great work on it, and I look forward to seeing the next draft and
+hearing further from you,
+
+best regards,
+Anton

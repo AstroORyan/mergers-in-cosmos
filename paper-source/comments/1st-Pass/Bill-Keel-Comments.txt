@@ -1,0 +1,168 @@
+Oh, yes, I have a long history with all these ideas, so do let me wax prolix if not eloquent!
+
+ 
+
+paragraph 1
+
+more empirically, the number of galaxy pairs and obviously distorted ones suggests
+
+that the processes are important even lacking a full scheme for galaxy formation and
+
+structure growth (Toomre's 1977 estimate of merger rates and number of ellipticals),
+
+as much as people like to connect everything everywhere all at once.
+
+ 
+
+para 2: dynamical time sometimes can also mean crossing time, circumference over velocity... so
+
+be explicit what we use it for
+
+ 
+
+para 3 also mix various geometries and sets of pre-encounter galaxy properties
+
+ 
+
+para 4 some galaxies will be truly far apart and essentially noninteracting (M31 and the Milky Way seen from some
+
+directions or worse). Estimates of the effet go back at least to Karachentsev circa 1987,
+
+(a couple of us translated his book in https://ned.ipac.caltech.edu/level5/Sept02/Keel/frames.html)
+
+showing that the number of interlopers among undistorted galaxies can be a significant fraction of the
+
+total catalogued possible pairs. (I figure that this is connected to the fact that galaxy pairs and mergers have
+
+only a very subtle signature on the correlation function). As a result, the effects in the
+
+undistorted "approach phase" subsample may be significantly diluted by such pseudopairs, and
+
+you can't just ignore undistorted pairs since simulations show that some approach directions/speeds
+
+leave galaxies almost undistorted until near closest approach. (As Gene Byrd was fond of saying,
+
+kinematic distortions must precede morphological ones).
+
+ 
+
+2.1 paragraph 2 - how many input sample systems were not in the COSMOS2020 catalog, and is it clear
+
+why they do not have matches?
+
+ 
+
+2.2 para 3 incorrect primary = fainter pair member at center of cutout?
+
+ 
+
+2.2 para 5 - for high z, it gets even worse as the (1+z)^4 "Tolman" cosmological dimming drops the
+
+surface brightness (by 2^4=16x at z=1), making it progressively harder to detect tidal features.
+
+
+ Fig 1B: is the secondary the large galaxy at the left edge or the small round one partially superimposed
+
+ on the lower left edge of the elongated central galaxy? Lower contrast or log/sinh scaling might make
+
+such cases clearer (oh, sure, bring this up now).
+
+ 
+
+ Fig. 2 - the sample has so few systems above z=1.0 that they must not affect the conclusions significantly.
+
+
+ 3.1 - do you want to say out loud that these classifications are (well-)motivated by simulations?
+
+OTOH there may be degeneracy between encounters with large impact parameters and earlier stages
+
+of deeper encounters. Getting into that indetail goes in the direction of matching tidal features to a
+
+simulation library, which is Beyond the Scope of This Work. For the final merging category - in simulations,
+
+tidal tails may outlast a distinct second distinct core (since crossing times are so much faster near the
+
+remnant nucleus) giving things like NGC 7252. Might some of these show up in your apocentric category,
+
+possibly diluting the desired SF and AGN signals, or is it really defined to avoid late postmerger stages?
+
+(Oops, never mind, I just saw that you discuss this at length in the following paragraphs - Fig. 5 is
+
+ reassuring).
+
+
+    A related issue comes in later - translating dynamical stages into years should at least factor in stellar
+
+    mass and ideally radial scale of the components (but this uncertainty may be swamped by the range in
+
+    orbital parameters that are unavoidably grouped together)
+
+   
+
+3.3 para 2 - does the 10" matching radius include a significant number of other galaxies (mostly the other
+
+pair members) beyond the AGN sought? Would a smaller radius better reflect astrometric uncertainties,
+
+or is the position from the optical catalogs sometimes significantly off the nucleus so this radius
+
+accounts for it?
+
+3.3 end - does the need for Chandra or VLA matches mean that star-forming galaxies are underrepresented in
+
+the matched sample so care is needed to interpret the fraction of galaxies with AGN, or is the denominator
+
+in that ratio taken from the entire sample?
+
+ 
+
+In all the figures showing points of different colors, to my eye it would be easier to interpret with larger
+
+marker sizes so the color is more obvious. Your mileage may vary (or kilometrage outside the USA?).
+
+ 
+
+section 4.1 para 2 - the red cloud galaxies have to turn into something - does this imply SF from gas
+
+previously not in the right state, or feeding of new gas supplies? (The latter could be from restructuring of the
+
+CGM as well as actual mass transfer between the galaxies)
+
+                para 8 - that fits with the repeated finding that ULIRGs at low z are essentially confined to ongoing
+
+                mergers near the coalescence point. (This holds whether a starburst or AGN is dominant, and it's
+
+                probably important that it's so often hard to tell which one produces more of the energy). Same point for
+
+                section 5.3.
+
+ 
+
+section 5: I can barely read this for pounding my head at the realization that (since I led a paper on the
+
+topic in 1985) we actually have not achieved consensus in the field about AGN triggering during interactions.
+
+Everything seems to be desperately sensitive to the details of sample selection.
+
+ 
+
+5.3 para 5: line 1 - separation distributions? How does that work for the controls?
+
+      - did the comparison in SR use medians, or dividing the mean of binned distributions or something?
+
+ 
+
+ 
+
+Section 5 end: delay in AGN ignition compared to what? Coalescence, apogalacticon, the rise in SFR?
+
+ 
+
+6.2 oara 2 - the Schawinski et al. result could be taken to suggest that changing the duty cycle of
+
+AGN being in a luminous state could be enough to produce most of the inferred enhancement. This could
+
+happen (off the top of my head) by changing the gas supply in the circumnuclear region.
+
+ 
+
+So nice to get all those off my chest!
